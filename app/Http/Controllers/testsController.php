@@ -77,4 +77,9 @@ class testsController extends Controller
         return view('projectId', compact('projects'));
     }
     
+    public function destroy($id)
+    {
+        projects::findOrFail($id)->delete();
+        return redirect('/projetosGet')->with('success', 'Projeto excluído com sucesso!');
+    }
 }

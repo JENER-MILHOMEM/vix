@@ -51,7 +51,7 @@
         </div>
     </nav>
 
-    <div>@yield('content')</div>
+    <div class="h-screen">@yield('content')</div>
 
 
     <footer class="bg-indigo-600 text-white py-8">

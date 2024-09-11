@@ -27,6 +27,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'img',
     ];
 
     /**
@@ -62,4 +63,11 @@ class User extends Authenticatable
 {
     return $this->hasMany(projects::class);
 }
+public function getProfilePictureUrlAttribute()
+    {
+        if ($this->profile_picture) {
+            return asset('storage/' . $this->profile_picture);
+        }
+        return asset('imagens/default/default.jpeg');
+    }
 }
